@@ -16,14 +16,6 @@ function saveVacationAndNext(nextPage) {
   window.location.href = nextPage;
 }
 
-function saveHolidaysAndNext(nextPage) {
-  const checkboxes = document.querySelectorAll('input[name=holidays]:checked');
-  const selected = Array.from(checkboxes).map(cb => cb.value);
-  const extras = document.getElementById('daysOffExtra').value;
-  localStorage.setItem('daysOff', selected.concat(extras ? [extras] : []).join(', '));
-  window.location.href = nextPage;
-}
-
 window.onload = function () {
   if (window.location.pathname.includes("results.html")) {
     const summary = document.getElementById("summary");
@@ -39,38 +31,6 @@ window.onload = function () {
       const div = document.createElement("div");
       div.innerHTML = `<strong>${key}:</strong> ${data[key] || "N/A"}`;
       summary.appendChild(div);
-    });
-  }
-
-  if (window.location.pathname.includes("page4.html")) {
-    const country = localStorage.getItem("country") || "us";
-    const holidayBox = document.getElementById("holidayCheckboxes");
-    const holidays = {
-      us: [
-        "New Year's Day (Jan 1)",
-        "Martin Luther King Jr. Day (Jan 15)",
-        "Presidents’ Day (Feb 19)",
-        "Memorial Day (May 27)",
-        "Juneteenth (June 19)",
-        "Independence Day (Jul 4)",
-        "Labor Day (Sep 2)",
-        "Veterans Day (Nov 11)",
-        "Thanksgiving Day (Nov 28)",
-        "Day After Thanksgiving (Nov 29)",
-        "Christmas Day (Dec 25)",
-        "Dec 26 (Thursday)",
-        "Dec 27 (Friday)",
-        "Dec 30 (Monday)",
-        "Dec 31 (Tuesday)"
-      ]
-    };
-    holidays[country].forEach(holiday => {
-      const div = document.createElement("div");
-      div.className = "flex items-center space-x-2";
-      div.innerHTML = `
-        <input type="checkbox" id="${holiday}" name="holidays" value="${holiday}" class="form-checkbox text-blue-600">
-        <label for="${holiday}">${holiday}</label>`;
-      holidayBox.appendChild(div);
     });
   }
 };

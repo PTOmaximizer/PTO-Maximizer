@@ -1,1 +1,16 @@
-<html><head><title>Step 4</title><script src='https://cdn.tailwindcss.com'></script></head><body class='p-6'>Days already off<br><a href='page5.html'>Next</a></body></html>
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vacation Planner</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body class="bg-gray-50 p-6">
+  <div class="max-w-xl mx-auto bg-white p-6 rounded-xl shadow space-y-4">
+    <h1 class="text-xl font-bold">Step 4: What days do you already have off?</h1>
+    <textarea id="daysOff" class="w-full border rounded px-3 py-2" rows="4" placeholder="e.g. Jan 1, Jul 4"></textarea>
+    <button onclick="saveAndNext('daysOff', 'page5.html')" class="bg-blue-600 text-white px-4 py-2 rounded">Next</button>
+  </div>
+</body></html>

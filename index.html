@@ -1,1 +1,21 @@
-<html><head><title>Step 1</title><script src='https://cdn.tailwindcss.com'></script></head><body class='p-6'>Select your country<br><a href='page2.html'>Next</a></body></html>
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vacation Planner</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body class="bg-gray-50 p-6">
+  <div class="max-w-xl mx-auto bg-white p-6 rounded-xl shadow space-y-4">
+    <h1 class="text-xl font-bold">Step 1: Select your country</h1>
+    <p class="text-sm text-gray-600">We need this to load the correct list of holidays.</p>
+    <select id="country" class="w-full border rounded px-3 py-2">
+      <option value="us">United States</option>
+      <option value="ca">Canada</option>
+      <option value="uk">United Kingdom</option>
+    </select>
+    <button onclick="saveAndNext('country', 'page2.html')" class="bg-blue-600 text-white px-4 py-2 rounded">Next</button>
+  </div>
+</body></html>

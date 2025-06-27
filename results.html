@@ -1,17 +1,15 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vacation Planner</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="script.js" defer></script>
+</head>
 
-<html>
-<head><title>Results</title><script src='https://cdn.tailwindcss.com'></script></head>
-<body class='p-6'>
-<h1>Your Optimized PTO Plan</h1>
-<div>✅ Take off Friday, Nov 28 <span title='4-day weekend'>Why?</span></div>
-<div>✅ Take off Monday, July 7 <span title='Extends July 4th'>Why?</span></div>
-<div class='grid grid-cols-7 gap-2 mt-4'>
-  <div class='bg-red-100 p-2 text-center'>Nov 27<br><em>Holiday</em></div>
-  <div class='bg-cyan-100 p-2 text-center'>Nov 28<br><strong>PTO</strong></div>
-  <div class='p-2 text-center'>Nov 29</div>
-  <div class='p-2 text-center'>Nov 30</div>
-  <div class='bg-red-100 p-2 text-center'>Jul 4<br><em>Holiday</em></div>
-  <div class='bg-cyan-100 p-2 text-center'>Jul 7<br><strong>PTO</strong></div>
-</div>
-</body>
-</html>
+<body class="bg-gray-50 p-6">
+  <div class="max-w-3xl mx-auto bg-white p-6 rounded-xl shadow">
+    <h1 class="text-2xl font-bold mb-4">Your Optimized PTO Plan</h1>
+    <div id="summary" class="space-y-4 text-gray-800"></div>
+  </div>
+</body></html>
