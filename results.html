@@ -1,79 +1,17 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Results</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body { font-family: Arial, sans-serif; max-width: 700px; margin: auto; padding: 20px; background: #f9f9f9; }
-    h1 { text-align: center; }
-    .suggestion { margin-bottom: 10px; }
-    .tooltip {
-      display: inline-block;
-      position: relative;
-      border-bottom: 1px dotted #000;
-      cursor: pointer;
-    }
-    .tooltip .tooltiptext {
-      visibility: hidden;
-      width: 240px;
-      background-color: #555;
-      color: #fff;
-      text-align: left;
-      border-radius: 6px;
-      padding: 8px;
-      position: absolute;
-      z-index: 1;
-      bottom: 125%; 
-      left: 50%;
-      margin-left: -120px;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .tooltip:hover .tooltiptext {
-      visibility: visible;
-      opacity: 1;
-    }
-    .calendar {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 5px;
-      margin-top: 20px;
-    }
-    .day {
-      background: #fff;
-      border: 1px solid #ccc;
-      padding: 10px;
-      text-align: center;
-      font-size: 12px;
-    }
-    .pto { background-color: #b2ebf2; }
-    .holiday { background-color: #ffccbc; }
-  </style>
-</head>
-<body>
-  <h1>Your Optimized PTO Plan</h1>
-  <div class="suggestion">
-    ✅ Take off <strong>Friday, Nov 28</strong>
-    <div class="tooltip">Why?
-      <span class="tooltiptext">This gives you a 4-day weekend with Thanksgiving.</span>
-    </div>
-  </div>
-  <div class="suggestion">
-    ✅ Take off <strong>Monday, July 7</strong>
-    <div class="tooltip">Why?
-      <span class="tooltiptext">Extends the July 4th weekend into a 4-day break.</span>
-    </div>
-  </div>
-  <h2>PTO Visualizer</h2>
-  <div class="calendar">
-    <div class="day">Nov 27<br><span class="holiday">Holiday</span></div>
-    <div class="day pto">Nov 28<br><strong>PTO</strong></div>
-    <div class="day">Nov 29</div>
-    <div class="day">Nov 30</div>
-    <div class="day">Jul 4<br><span class="holiday">Holiday</span></div>
-    <div class="day pto">Jul 7<br><strong>PTO</strong></div>
-  </div>
+<html>
+<head><title>Results</title><script src='https://cdn.tailwindcss.com'></script></head>
+<body class='p-6'>
+<h1>Your Optimized PTO Plan</h1>
+<div>✅ Take off Friday, Nov 28 <span title='4-day weekend'>Why?</span></div>
+<div>✅ Take off Monday, July 7 <span title='Extends July 4th'>Why?</span></div>
+<div class='grid grid-cols-7 gap-2 mt-4'>
+  <div class='bg-red-100 p-2 text-center'>Nov 27<br><em>Holiday</em></div>
+  <div class='bg-cyan-100 p-2 text-center'>Nov 28<br><strong>PTO</strong></div>
+  <div class='p-2 text-center'>Nov 29</div>
+  <div class='p-2 text-center'>Nov 30</div>
+  <div class='bg-red-100 p-2 text-center'>Jul 4<br><em>Holiday</em></div>
+  <div class='bg-cyan-100 p-2 text-center'>Jul 7<br><strong>PTO</strong></div>
+</div>
 </body>
 </html>
