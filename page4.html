@@ -1,1 +1,20 @@
-<!DOCTYPE html><html><head><title>Page 4</title></head><body><h1>Page 4: Do you have any vacations already planned?</h1><a href='page5.html'>Next</a></body></html>
+<!DOCTYPE html><html lang="en">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Days Already Off</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="script.js" defer></script>
+</head>
+<body class="bg-gray-50 p-6">
+  <div class="max-w-xl mx-auto bg-white p-6 rounded-xl shadow space-y-4">
+    <h1 class="text-xl font-bold">Step 4: What days do you already have off?</h1>
+    <p class="text-sm text-gray-600">Select the holidays or add your own below.</p>
+    <div id="holidayCheckboxes" class="space-y-2"></div>
+    <label class="block text-sm mt-4">Other days:</label>
+    <textarea id="daysOffExtra" class="w-full border rounded px-3 py-2" rows="3" placeholder="e.g. Company retreat, floating holidays..."></textarea>
+    <div class="flex justify-between mt-4">
+      <a href="page3.html" class="bg-gray-300 text-black px-4 py-2 rounded">Back</a>
+      <button onclick="saveHolidaysAndNext('page5.html')" class="bg-blue-600 text-white px-4 py-2 rounded">Next</button>
+    </div>
+  </div>
+</body>
+</html>
