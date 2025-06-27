@@ -1,16 +1,10 @@
 <!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vacation Planner</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="script.js" defer></script>
-</head>
-
-<body class="bg-gray-50 p-6">
-  <div class="max-w-xl mx-auto bg-white p-6 rounded-xl shadow space-y-4">
-    <h1 class="text-xl font-bold">Step 3: How much PTO do you have remaining?</h1>
-    <input type="number" id="ptoDays" class="w-full border rounded px-3 py-2" placeholder="e.g. 10" />
-    <button onclick="saveAndNext('ptoDays', 'page4.html')" class="bg-blue-600 text-white px-4 py-2 rounded">Next</button>
-  </div>
-</body></html>
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>PTO Remaining</title><script src="https://cdn.tailwindcss.com"></script><script src="script.js" defer></script></head>
+<body class="bg-gray-50 p-6"><div class="max-w-xl mx-auto bg-white p-6 rounded-xl shadow space-y-4">
+<h1 class="text-xl font-bold">Step 3: How many hours of PTO do you have remaining?</h1>
+<input type="number" id="ptoDays" class="w-full border rounded px-3 py-2" placeholder="e.g. 40"/>
+<div class="flex justify-between">
+  <a href="page2.html" class="bg-gray-300 text-black px-4 py-2 rounded">Back</a>
+  <button onclick="saveAndNext('ptoDays', 'page4.html')" class="bg-blue-600 text-white px-4 py-2 rounded">Next</button>
+</div></div></body></html>
