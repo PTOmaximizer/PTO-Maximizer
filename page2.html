@@ -1,16 +1,26 @@
 <!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vacation Planner</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="script.js" defer></script>
-</head>
-
-<body class="bg-gray-50 p-6">
-  <div class="max-w-xl mx-auto bg-white p-6 rounded-xl shadow space-y-4">
-    <h1 class="text-xl font-bold">Step 2: What day would you like us to start planning from?</h1>
-    <input type="date" id="startDate" class="w-full border rounded px-3 py-2" />
-    <button onclick="saveAndNext('startDate', 'page3.html')" class="bg-blue-600 text-white px-4 py-2 rounded">Next</button>
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Step 2: Start Date</title><script src="https://cdn.tailwindcss.com"></script><script defer src="script.js"></script></head>
+<body class="bg-[#f9f9fb] font-sans">
+  <div class="max-w-5xl mx-auto mt-10 grid grid-cols-4 gap-6">
+    <aside class="col-span-1 bg-white p-4 rounded-xl shadow text-sm space-y-4">
+      <ul class="space-y-2">
+        <li class="text-gray-500">1. Country</li>
+        <li class="font-bold text-indigo-700">2. Start Date</li>
+        <li class="text-gray-500">3. PTO Left</li>
+        <li class="text-gray-500">4. Existing Time Off</li>
+        <li class="text-gray-500">5. Planned Vacations</li>
+        <li class="text-gray-500">6. Your Results</li>
+      </ul>
+    </aside>
+    <main class="col-span-3 bg-white p-8 rounded-xl shadow space-y-6">
+      <h2 class="text-xl font-bold text-indigo-700">Step 2: What day should we start planning from?</h2>
+      <p class="text-gray-600">You can choose a future date if you just started a job.</p>
+      <input type="date" id="startDate" class="border border-gray-300 px-4 py-2 rounded w-full"/>
+      <div class="flex justify-between mt-6">
+        <a href="page1.html" class="text-indigo-600 hover:underline">← Back</a>
+        <button onclick="saveAndNext('startDate', 'page3.html')" class="bg-indigo-600 text-white px-5 py-2 rounded hover:bg-indigo-700">Next →</button>
+      </div>
+    </main>
   </div>
 </body></html>
