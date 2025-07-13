@@ -11,3 +11,8 @@ function saveAndNext(id, nextPage) {
   localStorage.setItem(id, value || "");
   window.location.href = nextPage;
 }
+function skipVacationDates() {
+  localStorage.setItem('vacationStart', '');
+  localStorage.setItem('vacationEnd', '');
+  window.location.href = 'page6.html';
+}
