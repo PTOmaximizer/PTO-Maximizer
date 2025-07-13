@@ -14,5 +14,5 @@ function saveAndNext(id, nextPage) {
 function skipVacationDates() {
   localStorage.setItem('vacationStart', '');
   localStorage.setItem('vacationEnd', '');
-  window.location.href = 'page6.html';
+  window.location.href = 'results.html';
 }
