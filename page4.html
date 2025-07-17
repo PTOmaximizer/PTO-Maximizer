@@ -1,49 +1,22 @@
-<!DOCTYPE html><html lang="en">
-<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Step 4: Days Off</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<script defer src="script.js"></script></head>
-<body class="bg-[#f9f9fb] font-sans">
-  <div class="max-w-5xl mx-auto mt-10 grid grid-cols-4 gap-6">
-    <aside class="col-span-1 bg-white p-4 rounded-xl shadow text-sm space-y-4">
-      <ul class="space-y-2">
-        <li class="text-gray-500">1. Country</li>
-        <li class="text-gray-500">2. Start Date</li>
-        <li class="text-gray-500">3. PTO Left</li>
-        <li class="font-bold text-indigo-700">4. Existing Time Off</li>
-        <li class="text-gray-500">5. Planned Vacations</li>
-        <li class="text-gray-500">6. Your Results</li>
-      </ul>
-    </aside>
-    <main class="col-span-3 bg-white p-8 rounded-xl shadow space-y-6">
-      <h2 class="text-xl font-bold text-indigo-700">Step 4: What days do you already have off?</h2>
-      <p class="text-gray-600">We’ll suggest holidays based on your country — just check off the ones you get.</p>
 
-      <div class="grid grid-cols-2 gap-2">
-        <label><input type="checkbox" value="2025-01-01" class="mr-2"> New Year's Day (Jan 1)</label>
-        <label><input type="checkbox" value="2025-01-20" class="mr-2"> Martin Luther King Jr. Day (Jan 20)</label>
-        <label><input type="checkbox" value="2025-02-17" class="mr-2"> Presidents' Day (Feb 17)</label>
-        <label><input type="checkbox" value="2025-05-26" class="mr-2"> Memorial Day (May 26)</label>
-        <label><input type="checkbox" value="2025-06-19" class="mr-2"> Juneteenth (June 19)</label>
-        <label><input type="checkbox" value="2025-07-04" class="mr-2"> Independence Day (July 4)</label>
-        <label><input type="checkbox" value="2025-09-01" class="mr-2"> Labor Day (Sep 1)</label>
-        <label><input type="checkbox" value="2025-10-13" class="mr-2"> Columbus Day (Oct 13)</label>
-        <label><input type="checkbox" value="2025-11-11" class="mr-2"> Veterans Day (Nov 11)</label>
-        <label><input type="checkbox" value="2025-11-27" class="mr-2"> Thanksgiving Day (Nov 27)</label>
-        <label><input type="checkbox" value="2025-11-28" class="mr-2"> Day After Thanksgiving (Nov 28)</label>
-        <label><input type="checkbox" value="2025-12-24" class="mr-2"> Christmas Eve (Dec 24)</label>
-        <label><input type="checkbox" value="2025-12-25" class="mr-2"> Christmas Day (Dec 25)</label>
-        <label><input type="checkbox" value="2025-12-26" class="mr-2"> Day After Christmas (Dec 26)</label>
-        <label><input type="checkbox" value="2025-12-29" class="mr-2"> Dec 29 (Mon)</label>
-        <label><input type="checkbox" value="2025-12-30" class="mr-2"> Dec 30 (Tue)</label>
-        <label><input type="checkbox" value="2025-12-31" class="mr-2"> New Year's Eve (Dec 31)</label>
-      </div>
-
-      <textarea id="daysOffExtra" rows="4" class="border border-gray-300 px-4 py-2 rounded w-full" placeholder="Type any others here (optional)"></textarea>
-      <div class="flex justify-between mt-6">
-        <a href="page3.html" class="text-indigo-600 hover:underline">← Back</a>
-        <button onclick="saveAndNext('daysOffExtra', 'page5.html')" class="bg-indigo-600 text-white px-5 py-2 rounded hover:bg-indigo-700">Next →</button>
-      </div>
-    </main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Days Off</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="script.js" defer></script>
+</head>
+<body class="bg-gray-100 p-6">
+  <div class="max-w-xl mx-auto bg-white p-6 rounded shadow space-y-4">
+    <h1 class="text-xl font-bold">Step 4: What days do you already have off?</h1>
+    <div id="holidayContainer" class="space-y-2"></div>
+    <textarea id="daysOffExtra" rows="4" class="border border-gray-300 px-4 py-2 rounded w-full" placeholder="Type any others here (optional)"></textarea>
+    <div class="flex justify-between mt-6">
+      <a href="page3.html" class="text-indigo-600 hover:underline">← Back</a>
+      <button onclick="saveAndNext('daysOffExtra', 'page5.html')" class="bg-indigo-600 text-white px-5 py-2 rounded hover:bg-indigo-700">Next →</button>
+    </div>
   </div>
-</body></html>
+</body>
+</html>
