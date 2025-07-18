@@ -16,3 +16,16 @@ function skipVacationDates() {
   localStorage.setItem('vacationEnd', '');
   window.location.href = 'results.html';
 }
+function saveVacationDatesAndGo(nextPage) {
+  const start = document.getElementById("vacationStart").value;
+  const end = document.getElementById("vacationEnd").value;
+
+  if (!start || !end) {
+    alert("Please enter both start and end dates.");
+    return;
+  }
+
+  localStorage.setItem("vacationStart", start);
+  localStorage.setItem("vacationEnd", end);
+  window.location.href = nextPage;
+}
