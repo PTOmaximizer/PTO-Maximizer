@@ -29,3 +29,17 @@ function saveVacationDatesAndGo(nextPage) {
   localStorage.setItem("vacationEnd", end);
   window.location.href = nextPage;
 }
+function handleVacationNext(nextPage) {
+  const start = document.getElementById("vacationStart").value;
+  const end = document.getElementById("vacationEnd").value;
+  const noVacations = document.getElementById("noVacations").checked;
+
+  if (!noVacations && (!start || !end)) {
+    alert("Please enter both vacation dates or check the box if you have no vacations planned.");
+    return;
+  }
+
+  localStorage.setItem("vacationStart", noVacations ? "" : start);
+  localStorage.setItem("vacationEnd", noVacations ? "" : end);
+  window.location.href = nextPage;
+}
