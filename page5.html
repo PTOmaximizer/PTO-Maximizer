@@ -1,9 +1,17 @@
-<!DOCTYPE html><html lang="en">
-<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Step 5: Planned Vacations</title><script src="https://cdn.tailwindcss.com"></script><script defer src="script.js"></script></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Step 5: Planned Vacations</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="script.js"></script>
+</head>
 <body class="bg-[#f9f9fb] font-sans">
-  <div class="max-w-5xl mx-auto mt-10 grid grid-cols-4 gap-6">
-    <aside class="col-span-1 bg-white p-4 rounded-xl shadow text-sm space-y-4">
+  <div class="max-w-5xl mx-auto mt-10 grid grid-cols-1 md:grid-cols-4 gap-6 px-4 md:px-0">
+    
+    <!-- Sidebar -->
+    <aside class="w-full md:col-span-1 bg-white p-4 rounded-xl shadow text-sm space-y-4">
       <ul class="space-y-2">
         <li class="text-gray-500">1. Country</li>
         <li class="text-gray-500">2. Start Date</li>
@@ -13,25 +21,42 @@
         <li class="text-gray-500">6. Your Results</li>
       </ul>
     </aside>
-    <main class="col-span-3 bg-white p-8 rounded-xl shadow space-y-6">
-      <h2 class="text-xl font-bold text-slate-700">Step 5: Do you already have vacations planned?</h2>
-      <p class="text-gray-600">If so, enter the dates below. We won’t suggest anything that overlaps.</p>
+
+    <!-- Main content -->
+    <main class="w-full md:col-span-3 bg-white p-4 md:p-8 rounded-xl shadow space-y-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-700">
+        Step 5: Do you already have vacations planned?
+      </h2>
+      <p class="text-gray-600">
+        If so, enter the dates below. We won’t suggest anything that overlaps.
+      </p>
+
+      <!-- Vacation date inputs -->
       <div class="space-y-4">
         <input type="date" id="vacationStart" class="border border-gray-300 px-4 py-2 rounded w-full"/>
         <input type="date" id="vacationEnd" class="border border-gray-300 px-4 py-2 rounded w-full"/>
       </div>
-      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-6">
-  <a href="page4.html" class="text-slate-600 hover:underline">← Back</a>
 
-  <label class="inline-flex items-center">
-    <input type="checkbox" id="noVacations" class="form-checkbox h-5 w-5 text-slate-600">
-    <span class="ml-2 text-sm text-gray-700">I don’t have any vacations planned</span>
-  </label>
+      <!-- Navigation row -->
+      <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mt-6">
+        
+        <!-- Back -->
+        <a href="page4.html" class="text-slate-600 hover:underline text-center md:text-left">← Back</a>
 
-  <button onclick="handleVacationNext('results.html')" class="bg-slate-600 text-white px-4 py-2 rounded">
-    See My Results
-  </button>
-</div>
-     </main>
+        <!-- Checkbox -->
+        <label class="inline-flex items-center justify-center md:justify-start">
+          <input type="checkbox" id="noVacations" class="form-checkbox h-5 w-5 text-slate-600">
+          <span class="ml-2 text-sm text-gray-700">I don’t have any vacations planned</span>
+        </label>
+
+        <!-- Submit -->
+        <button onclick="handleVacationNext('results.html')" class="w-full md:w-auto bg-slate-600 text-white px-5 py-2 rounded hover:bg-slate-700">
+          See My Results
+        </button>
+
+      </div>
+    </main>
+
   </div>
-</body></html>
+</body>
+</html>
