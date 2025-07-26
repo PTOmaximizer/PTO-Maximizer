@@ -43,3 +43,28 @@ function handleVacationNext(nextPage) {
   localStorage.setItem("vacationEnd", noVacations ? "" : end);
   window.location.href = nextPage;
 }
+document.getElementById("generate-button").addEventListener("click", async () => {
+  const data = {
+    country: document.getElementById("country").value,
+    startDate: document.getElementById("startDate").value,
+    ptoDays: document.getElementById("ptoDays").value,
+    daysOff: [], // or however you're collecting this
+    vacationStart: null,
+    vacationEnd: null,
+  };
+
+  try {
+    const response = await fetch("https://pto-backend.onrender.com", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+    document.getElementById("result").innerText = result.result;
+  } catch (error) {
+    console.error("Error calling backend:", error);
+    alert("Something went wrong. Check the console.");
+  }
+});
+
