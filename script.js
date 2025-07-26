@@ -61,7 +61,7 @@ document.getElementById("generate-button").addEventListener("click", async () =>
     });
 
     const result = await response.json();
-    document.getElementById("result").innerText = result.result;
+    document.getElementById("result").innerText = result.result;f
   } catch (error) {
     console.error("Error calling backend:", error);
     alert("Something went wrong. Check the console.");
