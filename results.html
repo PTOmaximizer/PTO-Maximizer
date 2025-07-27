@@ -18,11 +18,18 @@
   <script>
     document.addEventListener("DOMContentLoaded", async () => {
       const summaryDiv = document.getElementById("summary");
-      const data = JSON.parse(localStorage.getItem("vacationData"));
+      const country = localStorage.getItem("country");
+const startDate = localStorage.getItem("startDate");
+const ptoDays = localStorage.getItem("ptoDays");
+const daysOff = JSON.parse(localStorage.getItem("daysOff") || "[]");
+const vacationStart = localStorage.getItem("vacationStart");
+const vacationEnd = localStorage.getItem("vacationEnd");
 
-      if (!data) {
-        summaryDiv.innerText = "No vacation data found. Please go back and complete the form.";
-        return;
+if (!country || !startDate || !ptoDays) {
+  summaryDiv.innerText = "Missing key vacation info. Please go back and complete the form.";
+  return;
+}
+
       }
 
       try {
