@@ -16,48 +16,33 @@
   </div>
 
   <script>
-  document.addEventListener("DOMContentLoaded", async () => {
-    const summaryDiv = document.getElementById("summary");
+    document.addEventListener("DOMContentLoaded", async () => {
+      const summaryDiv = document.getElementById("summary");
+      const data = JSON.parse(localStorage.getItem("vacationData"));
 
-    // Collect data from localStorage (adjust keys if needed)
-    const country = localStorage.getItem("country") || "US";
-    const startDate = localStorage.getItem("startDate") || "";
-    const ptoDays = localStorage.getItem("ptoDays") || "";
-    const daysOff = JSON.parse(localStorage.getItem("daysOff") || "[]");
-    const vacationStart = localStorage.getItem("vacationStart") || "";
-    const vacationEnd = localStorage.getItem("vacationEnd") || "";
-
-    // Build prompt string for ChatGPT
-    const prompt = `
-I live in ${country} and want to start planning time off from ${startDate}.
-I have ${ptoDays} PTO days left.
-I already have the following days off: ${daysOff.join(", ") || "none"}.
-I have a vacation planned from ${vacationStart || "no start date"} to ${vacationEnd || "no end date"}.
-Please suggest how to maximize my time off using holidays and my PTO.
-`;
-
-    try {
-      const response = await fetch("https://pto-backend.onrender.com/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          message: prompt,
-          country: country
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Server error: " + response.status);
+      if (!data) {
+        summaryDiv.innerText = "No vacation data found. Please go back and complete the form.";
+        return;
       }
 
-      const result = await response.json();
-      summaryDiv.innerText = result.reply;
-    } catch (error) {
-      console.error("❌ Error fetching plan:", error);
-      summaryDiv.innerText = "Something went wrong loading your plan. Please try again later.";
-    }
-  });
-</script>
+      try {
+        const response = await fetch("https://pto-backend.onrender.com/generate-plan", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
 
+        if (!response.ok) {
+          throw new Error("Server error: " + response.status);
+        }
+
+        const result = await response.json();
+        summaryDiv.innerText = result.result;
+      } catch (error) {
+        console.error("❌ Error fetching plan:", error);
+        summaryDiv.innerText = "Something went wrong loading your plan. Please try again later.";
+      }
+    });
+  </script>
 </body>
 </html>

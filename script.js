@@ -62,7 +62,7 @@ Please suggest how to maximize my time off using holidays and my PTO.
 `;
 
   try {
-    const response = await fetch("https://pto-backend.onrender.com/api/chat", {
+    const response = await fetch("https://https://pto-backend.onrender.com/generate-plan", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
