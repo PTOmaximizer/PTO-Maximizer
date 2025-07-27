@@ -44,24 +44,35 @@ function handleVacationNext(nextPage) {
   window.location.href = nextPage;
 }
 document.getElementById("generate-button").addEventListener("click", async () => {
-  const data = {
-    country: document.getElementById("country").value,
-    startDate: document.getElementById("startDate").value,
-    ptoDays: document.getElementById("ptoDays").value,
-    daysOff: [], // or however you're collecting this
-    vacationStart: null,
-    vacationEnd: null,
+  const formData = {
+    country: localStorage.getItem("country"),
+    startDate: localStorage.getItem("startDate"),
+    ptoDays: localStorage.getItem("ptoDays"),
+    daysOff: JSON.parse(localStorage.getItem("daysOff") || "[]"),
+    vacationStart: localStorage.getItem("vacationStart"),
+    vacationEnd: localStorage.getItem("vacationEnd"),
   };
 
+  const prompt = `
+I live in ${formData.country} and want to start planning time off from ${formData.startDate}.
+I have ${formData.ptoDays} PTO days left.
+I already have the following days off: ${formData.daysOff.join(", ") || "none"}.
+I have a vacation planned from ${formData.vacationStart || "no start date"} to ${formData.vacationEnd || "no end date"}.
+Please suggest how to maximize my time off using holidays and my PTO.
+`;
+
   try {
-    const response = await fetch("https://pto-backend.onrender.com", {
+    const response = await fetch("https://pto-backend.onrender.com/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        message: prompt,
+        country: formData.country
+      }),
     });
 
     const result = await response.json();
-    document.getElementById("result").innerText = result.result;f
+    document.getElementById("result").innerText = result.reply;
   } catch (error) {
     console.error("Error calling backend:", error);
     alert("Something went wrong. Check the console.");
