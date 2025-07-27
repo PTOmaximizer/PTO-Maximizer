@@ -67,7 +67,7 @@ Please suggest how to maximize my time off using holidays and my PTO.
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         message: prompt,
-        country: formData.country
+        country: country
       }),
     });
 
